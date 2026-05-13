@@ -1,0 +1,46 @@
+---
+import "../styles/global.css";
+import Header from "../components/layout/Header.astro";
+import Footer from "../components/layout/Footer.astro";
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "Rizki Khair — AI-powered Frontend Engineer",
+  description = "AI-powered Frontend Engineer building clean, scalable, and production-ready web interfaces.",
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>{title}</title>
+
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+  </head>
+
+  <body>
+    <div class="min-h-screen bg-slate-50 text-slate-950">
+      <Header />
+
+      <main>
+        <slot />
+      </main>
+
+      <Footer />
+    </div>
+  </body>
+</html>
