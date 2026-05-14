@@ -1,40 +1,41 @@
 ---
+import { getCollection } from "astro:content";
 import Container from "../layout/Container.astro";
 import SectionTitle from "../ui/SectionTitle.astro";
 import ProjectCard from "../ui/ProjectCard.astro";
 
-const project = {
-  title: "AI Content Workspace",
-  description:
-    "A modern SaaS-style dashboard for generating, managing, and analyzing AI-powered content. Built as a portfolio-grade product with realistic UX, client-side persistence, and clean frontend architecture.",
-  href: "/projects/ai-content-workspace",
-  tags: [
-    "Next.js",
-    "TypeScript",
-    "Tailwind CSS",
-    "shadcn/ui",
-    "Recharts",
-    "IndexedDB",
-    "Dashboard UI",
-  ],
-};
+const projects = await getCollection("projects");
+
+const sortedProjects = projects.sort((a, b) => {
+  if (a.data.featured && !b.data.featured) return -1;
+  if (!a.data.featured && b.data.featured) return 1;
+
+  return b.data.year - a.data.year;
+});
 ---
 
 <section id="projects" class="border-b border-slate-200 bg-slate-50 py-20">
   <Container>
     <div class="space-y-10">
       <SectionTitle
-        eyebrow="Featured Project"
+        eyebrow="Projects"
         title="Selected work built with product thinking."
-        description="A focused case study that shows how I approach frontend architecture, user experience, and real product flows."
+        description="A focused collection of projects that shows how I approach frontend architecture, user experience, and real product flows."
       />
 
-      <ProjectCard
-        title={project.title}
-        description={project.description}
-        href={project.href}
-        tags={project.tags}
-      />
+      <div class="scrollbar-hide -mx-4 overflow-x-auto scroll-smooth px-4 pb-4 sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8 pt-4">
+        <div class="flex w-max gap-6">
+          {sortedProjects.map((project) => (
+            <ProjectCard
+              title={project.data.title}
+              description={project.data.description}
+              href={`/projects/${project.id}`}
+              tags={project.data.stack}
+              label={project.data.featured ? "Featured Case Study" : project.data.type}
+            />
+          ))}
+        </div>
+      </div>
     </div>
   </Container>
 </section>

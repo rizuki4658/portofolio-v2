@@ -1,0 +1,84 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+import Container from "../components/layout/Container.astro";
+import Badge from "../components/ui/Badge.astro";
+import Button from "../components/ui/Button.astro";
+
+interface Props {
+  title: string;
+  description: string;
+  stack: string[];
+  status: string;
+  demoUrl?: string;
+  sourceUrl?: string;
+}
+
+const {
+  title,
+  description,
+  stack,
+  status,
+  demoUrl,
+  sourceUrl
+} = Astro.props;
+---
+
+<BaseLayout title={`${title} — Case Study`} description={description}>
+  <article>
+    <section class="border-b border-slate-200 bg-slate-50 py-20">
+      <Container>
+        <div class="max-w-4xl">
+          <a
+            href="/#projects"
+            class="text-sm font-medium text-slate-500 transition hover:text-slate-950"
+          >
+            ← Back to projects
+          </a>
+
+          <div class="mt-8 flex flex-wrap gap-2">
+            <Badge label={status} />
+            <Badge label="Case Study" />
+          </div>
+
+          <h1 class="mt-6 text-4xl font-semibold tracking-tight text-slate-950 sm:text-5xl lg:text-6xl">
+            {title}
+          </h1>
+
+          <p class="mt-6 max-w-3xl text-lg leading-8 text-slate-600">
+            {description}
+          </p>
+
+          <div class="mt-8 flex flex-wrap gap-2">
+            {stack.map((item) => (
+              <Badge label={item} />
+            ))}
+          </div>
+
+          {(demoUrl || sourceUrl) && (
+            <div class="mt-10 flex flex-col gap-3 sm:flex-row">
+              {demoUrl && (
+                <Button href={demoUrl} variant="primary" target="_blank" rel="noreferrer">
+                  View Demo
+                </Button>
+              )}
+
+              {sourceUrl && (
+                <Button href={sourceUrl} variant="secondary" target="_blank" rel="noreferrer">
+                  View Source
+                </Button>
+              )}
+            </div>
+          )}
+        </div>
+      </Container>
+    </section>
+
+    <section class="bg-white py-20">
+      <Container>
+        <div class="prose prose-slate max-w-3xl">
+          <slot />
+        </div>
+      </Container>
+    </section>
+  </article>
+</BaseLayout>
