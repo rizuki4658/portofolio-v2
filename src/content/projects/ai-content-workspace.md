@@ -19,6 +19,7 @@ highlights:
   - "Client-side persistence with IndexedDB"
 featured: true
 publishedAt: "2026-05-14"
+demoUrl: "https://aicontentworkspace.netlify.app"
 sourceUrl: "https://github.com/rizuki4658/ai-content-workspace"
 screenshots:
   - title: "Dashboard Overview"
