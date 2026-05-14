@@ -1,42 +1,210 @@
 ---
 import Container from "../layout/Container.astro";
 import SectionTitle from "../ui/SectionTitle.astro";
+import Badge from "../ui/Badge.astro";
 
-const highlights = [
-  "Building SaaS dashboard interfaces and admin tools",
-  "Working with ecommerce and trade-in product flows",
-  "Structuring reusable frontend components",
-  "Improving UI maintainability and user experience",
+const mainExperience = {
+  role: "Frontend Developer",
+  company: "Reusely",
+  period: "2021 — Present",
+  description:
+    "Building and maintaining production frontend interfaces for trade-in, buyback, admin dashboard, widget, and customer portal workflows.",
+  links: [
+    {
+      label: "Reusely",
+      href: "https://www.reusely.com/",
+    },
+  ],
+  highlights: [
+    "Developed SaaS dashboard and admin interfaces for production workflows",
+    "Worked on trade-in and buyback user flows across multiple frontend surfaces",
+    "Built and maintained reusable UI components for complex product features",
+    "Contributed to frontend architecture improvements, migrations, and maintainability",
+  ],
+};
+
+const previousExperiences = [
+  {
+    role: "Frontend Developer",
+    company: "Popaket",
+    period: "Previous Experience",
+    description:
+      "Worked on frontend features for wallet, landing page updates, and shipping-related user flows.",
+    links: [
+      {
+        label: "Popaket",
+        href: "https://www.popaket.com/",
+      },
+    ],
+    highlights: [
+      "Built wallet-related frontend features",
+      "Implemented landing page updates and interface improvements",
+      "Worked on shipping and tracking flow interfaces",
+    ],
+  },
+  {
+    role: "Frontend Developer",
+    company: "Olsera",
+    period: "First Developer Role",
+    description:
+      "Joined as a frontend developer while the company was building a new beauty and health platform for salons, barbers, massage, and service booking workflows.",
+    links: [
+      {
+        label: "Olsera",
+        href: "https://www.olsera.com/",
+      },
+    ],
+    highlights: [
+      "Built dashboard schedule page for service booking management",
+      "Implemented role permission interfaces for user access control",
+      "Developed booking widget flow for selecting service, day, time, and payment",
+      "Worked on Midtrans payment gateway integration flow",
+    ],
+  },
+];
+
+const focusAreas = [
+  "SaaS dashboard interfaces",
+  "Trade-in and buyback workflows",
+  "Booking and scheduling flows",
+  "Payment and wallet-related UI",
+  "Shipping and tracking interfaces",
+  "Frontend integration with APIs",
 ];
 ---
 
 <section id="experience" class="border-b border-slate-200 bg-slate-50 py-20">
   <Container>
-    <div class="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
+    <div class="space-y-10">
       <SectionTitle
         eyebrow="Experience"
-        title="Frontend development for real product workflows."
-        description="Experience building production-ready interfaces across SaaS, ecommerce, and dashboard-heavy applications."
+        title="Production frontend work for real product workflows."
+        description="Experience building and maintaining frontend interfaces across SaaS dashboards, trade-in workflows, booking systems, and API-driven product features."
       />
 
-      <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
-        <h3 class="text-lg font-semibold tracking-tight text-slate-950">
-          Frontend Developer
-        </h3>
+      <article class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:p-7">
+        <div class="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
+          <div>
+            <p class="text-sm font-semibold uppercase tracking-[0.2em] text-slate-500">
+              Current Role
+            </p>
 
-        <p class="mt-3 text-base leading-7 text-slate-600">
-          I have experience building frontend applications that involve complex
-          workflows, responsive layouts, state handling, and production UI details.
+            <h3 class="mt-3 text-2xl font-semibold tracking-tight text-slate-950">
+              {mainExperience.role}
+            </h3>
+
+            {mainExperience.links.length > 0 && (
+              <div class="mt-1 flex flex-wrap gap-2">
+                {mainExperience.links.map((link) => (
+                  <a
+                    href={link.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    class="rounded-full border border-slate-200 bg-slate-50 px-3 py-1 text-xs font-medium text-slate-600 transition hover:border-slate-300 hover:text-slate-950"
+                  >
+                    {link.label} ↗
+                  </a>
+                ))}
+              </div>
+            )}
+          </div>
+
+          <p class="w-fit rounded-full bg-slate-100 px-3 py-1 text-sm font-medium text-slate-600">
+            {mainExperience.period}
+          </p>
+        </div>
+
+        <p class="mt-6 max-w-3xl text-base leading-7 text-slate-600">
+          {mainExperience.description}
         </p>
 
-        <ul class="mt-6 space-y-3">
-          {highlights.map((item) => (
-            <li class="flex gap-3 text-base leading-7 text-slate-600">
-              <span class="mt-2 h-2 w-2 shrink-0 rounded-full bg-slate-950"></span>
-              <span>{item}</span>
-            </li>
+        <div class="mt-6 grid gap-3 md:grid-cols-2">
+          {mainExperience.highlights.map((highlight) => (
+            <div class="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3">
+              <p class="text-sm leading-6 text-slate-700">
+                {highlight}
+              </p>
+            </div>
           ))}
-        </ul>
+        </div>
+      </article>
+
+      <div class="space-y-5">
+        <div>
+          <p class="text-sm font-semibold uppercase tracking-[0.2em] text-slate-500">
+            Previous Experience
+          </p>
+
+          <h3 class="mt-3 text-2xl font-semibold tracking-tight text-slate-950">
+            Earlier frontend roles.
+          </h3>
+        </div>
+
+        <div class="grid gap-6 md:grid-cols-2">
+          {previousExperiences.map((experience) => (
+            <article class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+              <div class="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
+                <div>
+                  <h4 class="text-xl font-semibold tracking-tight text-slate-950">
+                    {experience.role}
+                  </h4>
+
+                  {experience.links.length > 0 && (
+                    <div class="mt-1 flex flex-wrap gap-2">
+                      {experience.links.map((link) => (
+                        <a
+                          href={link.href}
+                          target="_blank"
+                          rel="noreferrer"
+                          class="rounded-full border border-slate-200 bg-slate-50 px-3 py-1 text-xs font-medium text-slate-600 transition hover:border-slate-300 hover:text-slate-950"
+                        >
+                          {link.label} ↗
+                        </a>
+                      ))}
+                    </div>
+                  )}
+                </div>
+
+                <p class="w-fit rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-slate-600">
+                  {experience.period}
+                </p>
+              </div>
+
+              <p class="mt-5 text-sm leading-6 text-slate-600">
+                {experience.description}
+              </p>
+
+              <ul class="mt-5 space-y-2.5">
+                {experience.highlights.map((highlight) => (
+                  <li class="flex gap-2.5 text-sm leading-6 text-slate-600">
+                    <span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-slate-950"></span>
+                    <span>{highlight}</span>
+                  </li>
+                ))}
+              </ul>
+            </article>
+          ))}
+        </div>
+      </div>
+
+      <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+        <div class="flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
+          <div class="max-w-xl">
+            <p class="text-sm font-semibold uppercase tracking-[0.2em] text-slate-500">
+              Focus Areas
+            </p>
+
+            <p class="mt-3 text-sm leading-6 text-slate-600">
+              Product areas and frontend workflows I have worked with across professional roles.
+            </p>
+          </div>
+
+          <div class="flex flex-wrap gap-2 md:justify-end">
+            {focusAreas.map((area) => (
+              <Badge label={area} />
+            ))}
+          </div>
+        </div>
       </div>
     </div>
   </Container>

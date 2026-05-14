@@ -5,16 +5,54 @@ import Badge from "../ui/Badge.astro";
 
 const skillGroups = [
   {
-    title: "Frontend",
-    skills: ["Vue.js", "React", "Next.js", "Astro", "TypeScript", "Tailwind CSS"],
+    title: "Frontend Frameworks",
+    description:
+      "Building modern frontend applications with component-based frameworks and content-driven architectures.",
+    skills: ["Vue.js", "Nuxt", "React", "Next.js", "Astro"],
   },
   {
-    title: "UI & Product",
-    skills: ["Dashboard UI", "Responsive Design", "Design System Thinking", "UX Flow"],
+    title: "State & Data Flow",
+    description:
+      "Managing application state, server-like data, and API-driven UI flows in production interfaces.",
+    skills: ["Pinia", "Vuex", "TanStack Query", "REST API Integration"],
   },
   {
-    title: "Tools",
-    skills: ["Git", "Vercel", "Recharts", "AI-assisted Development"],
+    title: "UI & Styling",
+    description:
+      "Creating clean, responsive, and maintainable user interfaces for dashboards and product workflows.",
+    skills: [
+      "Tailwind CSS",
+      "shadcn/ui",
+      "CSS",
+      "Responsive Design",
+      "Dashboard UI",
+    ],
+  },
+  {
+    title: "Build & Workflow",
+    description:
+      "Working with typed JavaScript, modern build tools, deployment platforms, and production development workflows.",
+    skills: [
+      "TypeScript",
+      "JavaScript",
+      "Git",
+      "Vite",
+      "Webpack",
+      "Vercel",
+      "Netlify",
+    ],
+  },
+  {
+    title: "Product & Delivery",
+    description:
+      "Supporting product delivery with UX thinking, reusable systems, AI-assisted workflows, and asset preparation.",
+    skills: [
+      "SaaS Interfaces",
+      "UX Flow",
+      "Design System Thinking",
+      "AI-assisted Development",
+      "Asset Preparation",
+    ],
   },
 ];
 ---
@@ -24,16 +62,20 @@ const skillGroups = [
     <div class="space-y-10">
       <SectionTitle
         eyebrow="Skills"
-        title="Frontend stack for modern product interfaces."
-        description="A practical stack focused on building clean, scalable, and maintainable user interfaces."
+        title="Frontend skills for modern product interfaces."
+        description="A practical skill set focused on building clean, scalable, and maintainable frontend experiences."
       />
 
-      <div class="grid gap-6 md:grid-cols-3">
+      <div class="grid gap-6 md:grid-cols-2">
         {skillGroups.map((group) => (
           <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
             <h3 class="text-lg font-semibold tracking-tight text-slate-950">
               {group.title}
             </h3>
+
+            <p class="mt-3 text-sm leading-6 text-slate-600">
+              {group.description}
+            </p>
 
             <div class="mt-5 flex flex-wrap gap-2">
               {group.skills.map((skill) => (
