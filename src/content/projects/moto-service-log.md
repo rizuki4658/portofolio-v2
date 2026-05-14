@@ -4,7 +4,7 @@ description: "A motorcycle maintenance tracking product concept designed to help
 role: "Frontend Developer"
 type: "Product Concept"
 status: "In-Progress"
-year: 2026
+year: 2025
 stack:
   - "Product Design"
   - "Frontend Planning"

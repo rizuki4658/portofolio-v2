@@ -7,8 +7,12 @@ import Button from "../components/ui/Button.astro";
 interface Props {
   title: string;
   description: string;
-  stack: string[];
+  role: string;
+  type: string;
   status: string;
+  year: number;
+  stack: string[];
+  highlights: string[];
   demoUrl?: string;
   sourceUrl?: string;
 }
@@ -16,18 +20,41 @@ interface Props {
 const {
   title,
   description,
-  stack,
+  role,
+  type,
   status,
+  year,
+  stack,
+  highlights,
   demoUrl,
-  sourceUrl
+  sourceUrl,
 } = Astro.props;
+
+const projectMeta = [
+  {
+    label: "Role",
+    value: role,
+  },
+  {
+    label: "Type",
+    value: type,
+  },
+  {
+    label: "Status",
+    value: status,
+  },
+  {
+    label: "Year",
+    value: year,
+  },
+];
 ---
 
 <BaseLayout title={`${title} — Case Study`} description={description}>
   <article>
     <section class="border-b border-slate-200 bg-slate-50 py-20">
       <Container>
-        <div class="max-w-4xl">
+        <div class="max-w-5xl">
           <a
             href="/#projects"
             class="text-sm font-medium text-slate-500 transition hover:text-slate-950"
@@ -37,10 +64,10 @@ const {
 
           <div class="mt-8 flex flex-wrap gap-2">
             <Badge label={status} />
-            <Badge label="Case Study" />
+            <Badge label={type} />
           </div>
 
-          <h1 class="mt-6 text-4xl font-semibold tracking-tight text-slate-950 sm:text-5xl lg:text-6xl">
+          <h1 class="mt-6 max-w-4xl text-4xl font-semibold tracking-tight text-slate-950 sm:text-5xl lg:text-6xl">
             {title}
           </h1>
 
@@ -48,22 +75,26 @@ const {
             {description}
           </p>
 
-          <div class="mt-8 flex flex-wrap gap-2">
-            {stack.map((item) => (
-              <Badge label={item} />
-            ))}
-          </div>
-
           {(demoUrl || sourceUrl) && (
             <div class="mt-10 flex flex-col gap-3 sm:flex-row">
               {demoUrl && (
-                <Button href={demoUrl} variant="primary" target="_blank" rel="noreferrer">
+                <Button
+                  href={demoUrl}
+                  variant="primary"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   View Demo
                 </Button>
               )}
 
               {sourceUrl && (
-                <Button href={sourceUrl} variant="secondary" target="_blank" rel="noreferrer">
+                <Button
+                  href={sourceUrl}
+                  variant="secondary"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   View Source
                 </Button>
               )}
@@ -73,9 +104,66 @@ const {
       </Container>
     </section>
 
+    <section class="border-b border-slate-200 bg-white py-12">
+      <Container>
+        <div class="grid gap-4 md:grid-cols-4">
+          {projectMeta.map((item) => (
+            <div class="rounded-3xl border border-slate-200 bg-white p-5 shadow-sm">
+              <p class="text-sm font-medium text-slate-500">{item.label}</p>
+              <p class="mt-2 text-base font-semibold text-slate-950">
+                {item.value}
+              </p>
+            </div>
+          ))}
+        </div>
+      </Container>
+    </section>
+
+    <section class="border-b border-slate-200 bg-slate-50 py-16">
+      <Container>
+        <div class="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
+          <div>
+            <p class="text-sm font-semibold uppercase tracking-[0.2em] text-slate-500">
+              Highlights
+            </p>
+
+            <h2 class="mt-3 text-3xl font-semibold tracking-tight text-slate-950">
+              What this project demonstrates.
+            </h2>
+          </div>
+
+          <div class="grid gap-4">
+            {highlights.map((highlight) => (
+              <div class="rounded-3xl border border-slate-200 bg-white p-5 shadow-sm">
+                <p class="text-base leading-7 text-slate-700">
+                  {highlight}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </Container>
+    </section>
+
+    <section class="border-b border-slate-200 bg-white py-16">
+      <Container>
+        <div class="max-w-4xl">
+          <p class="text-sm font-semibold uppercase tracking-[0.2em] text-slate-500">
+            Tech Stack
+          </p>
+
+          <div class="mt-5 flex flex-wrap gap-2">
+            {stack.map((item) => (
+              <Badge label={item} />
+            ))}
+          </div>
+        </div>
+      </Container>
+    </section>
+
     <section class="bg-white py-20">
       <Container>
-        <div class="prose prose-slate max-w-3xl">
+        <div class="prose prose-slate max-w-3xl prose-headings:tracking-tight prose-headings:text-slate-950 prose-p:leading-8 prose-li:leading-8">
           <slot />
         </div>
       </Container>

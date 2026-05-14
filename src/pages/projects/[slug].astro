@@ -22,8 +22,12 @@ const { Content } = await render(project);
 <ProjectLayout
   title={project.data.title}
   description={project.data.description}
-  stack={project.data.stack}
+  role={project.data.role}
+  type={project.data.type}
   status={project.data.status}
+  year={project.data.year}
+  stack={project.data.stack}
+  highlights={project.data.highlights}
   demoUrl={project.data.demoUrl}
   sourceUrl={project.data.sourceUrl}
 >
