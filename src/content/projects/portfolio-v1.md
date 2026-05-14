@@ -18,6 +18,19 @@ featured: false
 publishedAt: "2022-03-04"
 demoUrl: "https://rizkikhair.netlify.app/"
 sourceUrl: "https://github.com/rizuki4658/rizkikhairporto"
+screenshots:
+  - title: "Homepage"
+    src: "/projects/portfolio-v1/main.webp"
+    alt: "Portfolio Website v1 homepage with personal introduction and frontend developer positioning"
+    orientation: "desktop"
+  - title: "Skills"
+    src: "/projects/portfolio-v1/skills.webp"
+    alt: "Portfolio Website v1 skills section showing frontend development background"
+    orientation: "desktop"
+  - title: "Contact Form"
+    src: "/projects/portfolio-v1/contact.webp"
+    alt: "Portfolio Website v1 contact section with form integration using Nodemailer"
+    orientation: "desktop"
 ---
 
 ## Overview

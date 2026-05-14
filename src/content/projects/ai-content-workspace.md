@@ -20,6 +20,27 @@ highlights:
 featured: true
 publishedAt: "2026-05-14"
 sourceUrl: "https://github.com/rizuki4658/ai-content-workspace"
+screenshots:
+  - title: "Dashboard Overview"
+    src: "/projects/ai-content-workspace/dashboard.webp"
+    alt: "AI Content Workspace dashboard overview with stats, charts, and activity section"
+    orientation: "desktop"
+  - title: "Content Generation Flow"
+    src: "/projects/ai-content-workspace/generate.webp"
+    alt: "AI Content Workspace content generation page with input form and preview panel"
+    orientation: "desktop"
+  - title: "Content Management"
+    src: "/projects/ai-content-workspace/contents.webp"
+    alt: "AI Content Workspace contents page with filters, cards, and content management actions"
+    orientation: "desktop"
+  - title: "Analytics Dashboard"
+    src: "/projects/ai-content-workspace/analytics.webp"
+    alt: "AI Content Workspace analytics page with charts, summaries, and insights"
+    orientation: "desktop"
+  - title: "Settings Dashboard"
+    src: "/projects/ai-content-workspace/settings.webp"
+    alt: "AI Content Workspace settings page with perosnalize content, export, and import"
+    orientation: "desktop"
 ---
 
 ## Overview

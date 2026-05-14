@@ -17,6 +17,27 @@ highlights:
   - "Product idea focused on real rider ownership workflows"
 featured: true
 publishedAt: "2026-05-14"
+screenshots:
+  - title: "Dashboard Concept"
+    src: "/projects/moto-service-log/dashboard.webp"
+    alt: "Moto Service Log dashboard concept showing motorcycle profile, mileage, and maintenance summary"
+    orientation: "mobile"
+  - title: "Service Log Concept"
+    src: "/projects/moto-service-log/service.webp"
+    alt: "Moto Service Log service history concept showing maintenance records and replacement tracking"
+    orientation: "mobile"
+  - title: "Vehicles Concept"
+    src: "/projects/moto-service-log/vehicles.webp"
+    alt: "Moto Service Log vehicles tracking concept showing replacement intervals and parts history"
+    orientation: "mobile"
+  - title: "Gallery Concept"
+    src: "/projects/moto-service-log/gallery.webp"
+    alt: "Moto Service Log gallery concept showing photo of bike for decoration"
+    orientation: "mobile"
+  - title: "Settings Concept"
+    src: "/projects/moto-service-log/settings.webp"
+    alt: "Moto Service Log settings concept personilze, custom category, custom part and brand"
+    orientation: "mobile"
 ---
 
 ## Overview

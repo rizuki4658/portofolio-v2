@@ -20,6 +20,16 @@ const projects = defineCollection({
     publishedAt: z.string(),
     demoUrl: z.string().url().optional(),
     sourceUrl: z.string().url().optional(),
+    screenshots: z
+      .array(
+        z.object({
+          title: z.string(),
+          src: z.string(),
+          alt: z.string(),
+          orientation: z.enum(["desktop", "mobile"]).default("desktop"),
+        }),
+      )
+      .optional(),
   }),
 });
 
