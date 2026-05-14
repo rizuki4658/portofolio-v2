@@ -2,7 +2,7 @@
 title: "AI Content Workspace"
 description: "A modern SaaS-style dashboard for generating, managing, and analyzing AI-powered content."
 role: "Frontend Developer"
-type: "Featured Case Study (Personal Project)"
+type: "Case Study"
 status: "Completed"
 year: 2026
 stack:

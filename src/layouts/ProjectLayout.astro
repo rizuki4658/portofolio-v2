@@ -55,13 +55,33 @@ const projectMeta = [
     value: year,
   },
 ];
+const statusVariantMap = {
+  Completed: "success",
+  "Previous Version": "warning",
+  Concept: "purple",
+  "In Progress": "purple",
+} as const;
+
+const typeVariantMap = {
+  "Personal Project": "info",
+  "Product Concept": "purple",
+  "Case Study": "primary",
+} as const;
+
+const statusVariant =
+  statusVariantMap[status as keyof typeof statusVariantMap] ?? "default";
+
+const typeVariant =
+  typeVariantMap[type as keyof typeof typeVariantMap] ?? "default";
 ---
 
 <BaseLayout title={`${title} — Case Study`} description={description} type="article">
   <article>
     <section class="border-b border-slate-200 bg-slate-50 py-20">
-      <Container>
-        <div class="max-w-5xl">
+      <Container class="relative">
+        <div class="absolute inset-0 bg-[url('/hero.webp')] bg-cover bg-center bg-no-repeat"></div>
+        <div class="absolute inset-0 bg-linear-to-r from-slate-50 via-slate-50/90 to-slate-50/40"></div>
+        <div class="max-w-5xl relative">
           <a
             href="/#projects"
             class="text-sm font-medium text-slate-500 transition hover:text-slate-950"
@@ -70,8 +90,8 @@ const projectMeta = [
           </a>
 
           <div class="mt-8 flex flex-wrap gap-2">
-            <Badge label={status} />
-            <Badge label={type} />
+            <Badge label={status} variant={statusVariant} />
+            <Badge label={type} variant={typeVariant} />
           </div>
 
           <h1 class="mt-6 max-w-4xl text-4xl font-semibold tracking-tight text-slate-950 sm:text-5xl lg:text-6xl">

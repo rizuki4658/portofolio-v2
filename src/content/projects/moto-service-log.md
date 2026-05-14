@@ -3,7 +3,7 @@ title: "Moto Service Log"
 description: "A motorcycle maintenance tracking product concept designed to help riders log service history, parts replacement, mileage, and trip-related ownership data."
 role: "Frontend Developer"
 type: "Product Concept"
-status: "In-Progress"
+status: "In Progress"
 year: 2025
 stack:
   - "Product Design"
