@@ -23,9 +23,13 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-a {
+:where(a:not([class])) {
   color: inherit;
   text-decoration: none;
+}
+
+:where(a:not([class]):visited) {
+  color: inherit;
 }
 
 ::selection {

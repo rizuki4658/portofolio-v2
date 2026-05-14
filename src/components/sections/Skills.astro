@@ -1,0 +1,48 @@
+---
+import Container from "../layout/Container.astro";
+import SectionTitle from "../ui/SectionTitle.astro";
+import Badge from "../ui/Badge.astro";
+
+const skillGroups = [
+  {
+    title: "Frontend",
+    skills: ["Vue.js", "React", "Next.js", "Astro", "TypeScript", "Tailwind CSS"],
+  },
+  {
+    title: "UI & Product",
+    skills: ["Dashboard UI", "Responsive Design", "Design System Thinking", "UX Flow"],
+  },
+  {
+    title: "Tools",
+    skills: ["Git", "Vercel", "Recharts", "AI-assisted Development"],
+  },
+];
+---
+
+<section id="skills" class="border-b border-slate-200 bg-white py-20">
+  <Container>
+    <div class="space-y-10">
+      <SectionTitle
+        eyebrow="Skills"
+        title="Frontend stack for modern product interfaces."
+        description="A practical stack focused on building clean, scalable, and maintainable user interfaces."
+      />
+
+      <div class="grid gap-6 md:grid-cols-3">
+        {skillGroups.map((group) => (
+          <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+            <h3 class="text-lg font-semibold tracking-tight text-slate-950">
+              {group.title}
+            </h3>
+
+            <div class="mt-5 flex flex-wrap gap-2">
+              {group.skills.map((skill) => (
+                <Badge label={skill} />
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </Container>
+</section>

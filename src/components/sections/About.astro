@@ -1,0 +1,31 @@
+---
+import Container from "../layout/Container.astro";
+import SectionTitle from "../ui/SectionTitle.astro";
+---
+
+<section id="about" class="border-b border-slate-200 bg-white py-20">
+  <Container>
+    <div class="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
+      <SectionTitle
+        eyebrow="About"
+        title="Frontend work with product context."
+        description="I focus on building interfaces that are not only clean visually, but also maintainable, scalable, and aligned with real user flows."
+      />
+
+      <div class="space-y-5 text-base leading-7 text-slate-600">
+        <p>
+          I build frontend applications for SaaS dashboards, ecommerce systems,
+          and production-ready web interfaces. My work focuses on turning product
+          requirements into clean UI structure, reliable state flows, and responsive
+          user experiences.
+        </p>
+
+        <p>
+          I care about practical architecture: clear component boundaries,
+          maintainable styling, predictable data flow, and UI decisions that make
+          sense for real users.
+        </p>
+      </div>
+    </div>
+  </Container>
+</section>

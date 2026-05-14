@@ -1,0 +1,35 @@
+---
+import Container from "../layout/Container.astro";
+import Button from "../ui/Button.astro";
+---
+
+<section class="border-b border-slate-200 bg-slate-50">
+  <Container>
+    <div class="flex min-h-[calc(100vh-4rem)] flex-col justify-center py-20">
+      <div class="max-w-3xl">
+        <p class="mb-4 text-sm font-semibold uppercase tracking-[0.2em] text-slate-500">
+          Frontend Portfolio
+        </p>
+
+        <h1 class="text-4xl font-semibold tracking-tight text-slate-950 sm:text-5xl lg:text-6xl">
+          Frontend Engineer building clean, scalable, and production-ready web interfaces.
+        </h1>
+
+        <p class="mt-6 max-w-2xl text-lg leading-8 text-slate-600">
+          I build frontend applications with a strong focus on clean architecture,
+          product thinking, user experience, and maintainable code.
+        </p>
+
+        <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+          <Button href="#projects" variant="primary">
+            View Projects
+          </Button>
+
+          <Button href="#contact" variant="secondary">
+            Contact Me
+          </Button>
+        </div>
+      </div>
+    </div>
+  </Container>
+</section>

@@ -1,0 +1,40 @@
+---
+import Container from "../layout/Container.astro";
+import SectionTitle from "../ui/SectionTitle.astro";
+import ProjectCard from "../ui/ProjectCard.astro";
+
+const project = {
+  title: "AI Content Workspace",
+  description:
+    "A modern SaaS-style dashboard for generating, managing, and analyzing AI-powered content. Built as a portfolio-grade product with realistic UX, client-side persistence, and clean frontend architecture.",
+  href: "/projects/ai-content-workspace",
+  tags: [
+    "Next.js",
+    "TypeScript",
+    "Tailwind CSS",
+    "shadcn/ui",
+    "Recharts",
+    "IndexedDB",
+    "Dashboard UI",
+  ],
+};
+---
+
+<section id="projects" class="border-b border-slate-200 bg-slate-50 py-20">
+  <Container>
+    <div class="space-y-10">
+      <SectionTitle
+        eyebrow="Featured Project"
+        title="Selected work built with product thinking."
+        description="A focused case study that shows how I approach frontend architecture, user experience, and real product flows."
+      />
+
+      <ProjectCard
+        title={project.title}
+        description={project.description}
+        href={project.href}
+        tags={project.tags}
+      />
+    </div>
+  </Container>
+</section>
